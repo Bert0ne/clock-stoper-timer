@@ -1,6 +1,6 @@
-let clockS = document.querySelector('.clock__up--secondHand');
-let clockM = document.querySelector('.clock__up--minuteHand');
-let clockH = document.querySelector('.clock__up--hourHand');
+let clockS = document.querySelector('.clock__hands--secondHand');
+let clockM = document.querySelector('.clock__hands--minuteHand');
+let clockH = document.querySelector('.clock__hands--hourHand');
 
 //Download time from new Date and put into css
 setInterval(() => {
@@ -12,7 +12,6 @@ setInterval(() => {
     clockM.style.transform = "rotate("+ minuteNum +"deg)";
     clockH.style.transform = "rotate("+ hourNum+"deg)";
     console.log();
-
 }, 50);
 
 

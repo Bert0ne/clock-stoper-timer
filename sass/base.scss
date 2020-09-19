@@ -44,7 +44,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;    
 
-    &__up {
+    &__hands {
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -85,6 +85,121 @@ body {
             z-index: 5;
             position: absolute;        
         }
+    }
+
+    &__numbers {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        color: goldenrod;
+        position: relative;
+        font-size: 4rem;
+
+
+        &--twelve-six {
+            position: absolute;
+            height: 200%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &--one-seven {
+            position: absolute;
+            height: 200%;
+            transform: rotate(30deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-30deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-30deg);
+            }
+        }
+
+        &--two-eight {
+            position: absolute;
+            height: 200%;
+            transform: rotate(60deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-60deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-60deg);
+            }
+        }
+
+
+        &--three-nine {
+            position: absolute;
+            height: 200%;
+            transform: rotate(90deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-90deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-90deg);
+            }
+        }
+
+
+        &--four-ten {
+            position: absolute;
+            height: 200%;
+            transform: rotate(120deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-120deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-120deg);
+            }
+        }
+
+
+        &--five-eleven {
+            position: absolute;
+            height: 200%;
+            transform: rotate(150deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-150deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-150deg);
+            }
+        }
+        
     }
     
 

@@ -35,14 +35,14 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr; }
-  .clock__up {
+  .clock__hands {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     position: relative; }
-    .clock__up--hourHand, .clock__up--minuteHand, .clock__up--secondHand {
+    .clock__hands--hourHand, .clock__hands--minuteHand, .clock__hands--secondHand {
       border-radius: 10px; }
-    .clock__up--hourHand {
+    .clock__hands--hourHand {
       width: 1rem;
       height: 15rem;
       background-color: green;
@@ -50,7 +50,7 @@ body {
       transform-origin: bottom;
       z-index: 4;
       position: absolute; }
-    .clock__up--minuteHand {
+    .clock__hands--minuteHand {
       width: 1rem;
       height: 20rem;
       background-color: red;
@@ -58,7 +58,7 @@ body {
       transform-origin: bottom;
       z-index: 3;
       position: absolute; }
-    .clock__up--secondHand {
+    .clock__hands--secondHand {
       width: .5rem;
       height: 25rem;
       background-color: yellow;
@@ -66,3 +66,77 @@ body {
       transform-origin: bottom;
       z-index: 5;
       position: absolute; }
+  .clock__numbers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: goldenrod;
+    position: relative;
+    font-size: 4rem; }
+    .clock__numbers--twelve-six {
+      position: absolute;
+      height: 200%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+    .clock__numbers--one-seven {
+      position: absolute;
+      height: 200%;
+      transform: rotate(30deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+      .clock__numbers--one-seven span:nth-child(1) {
+        transform: rotate(-30deg); }
+      .clock__numbers--one-seven span:nth-child(2) {
+        transform: rotate(-30deg); }
+    .clock__numbers--two-eight {
+      position: absolute;
+      height: 200%;
+      transform: rotate(60deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+      .clock__numbers--two-eight span:nth-child(1) {
+        transform: rotate(-60deg); }
+      .clock__numbers--two-eight span:nth-child(2) {
+        transform: rotate(-60deg); }
+    .clock__numbers--three-nine {
+      position: absolute;
+      height: 200%;
+      transform: rotate(90deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+      .clock__numbers--three-nine span:nth-child(1) {
+        transform: rotate(-90deg); }
+      .clock__numbers--three-nine span:nth-child(2) {
+        transform: rotate(-90deg); }
+    .clock__numbers--four-ten {
+      position: absolute;
+      height: 200%;
+      transform: rotate(120deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+      .clock__numbers--four-ten span:nth-child(1) {
+        transform: rotate(-120deg); }
+      .clock__numbers--four-ten span:nth-child(2) {
+        transform: rotate(-120deg); }
+    .clock__numbers--five-eleven {
+      position: absolute;
+      height: 200%;
+      transform: rotate(150deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+      .clock__numbers--five-eleven span:nth-child(1) {
+        transform: rotate(-150deg); }
+      .clock__numbers--five-eleven span:nth-child(2) {
+        transform: rotate(-150deg); }
