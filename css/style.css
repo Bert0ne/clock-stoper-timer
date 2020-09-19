@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.6;
+  background-color: blueviolet; }
+
+.container {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
+
+.clock {
+  width: 60rem;
+  height: 60rem;
+  border: 1rem dotted goldenrod;
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr; }
+  .clock__up {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative; }
+    .clock__up--hourHand, .clock__up--minuteHand, .clock__up--secondHand {
+      border-radius: 10px; }
+    .clock__up--hourHand {
+      width: 1rem;
+      height: 15rem;
+      background-color: green;
+      transform: rotate(0deg);
+      transform-origin: bottom;
+      z-index: 4;
+      position: absolute; }
+    .clock__up--minuteHand {
+      width: 1rem;
+      height: 20rem;
+      background-color: red;
+      transform: rotate(0deg);
+      transform-origin: bottom;
+      z-index: 3;
+      position: absolute; }
+    .clock__up--secondHand {
+      width: .5rem;
+      height: 25rem;
+      background-color: yellow;
+      transform: rotate(0deg);
+      transform-origin: bottom;
+      z-index: 5;
+      position: absolute; }
