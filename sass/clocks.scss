@@ -1,0 +1,176 @@
+.clock {
+    width: 60rem;
+    height: 60rem;
+    border: 1rem dotted goldenrod;
+    border-radius: 50%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;    
+
+    &__hands {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+
+
+        &--hourHand,
+        &--minuteHand,
+        &--secondHand {
+            border-radius: 10px;
+        }
+
+        &--hourHand {
+            width: 1rem;
+            height: 15rem;
+            background-color: green;
+            transform: rotate(0deg);
+            transform-origin: bottom;
+            z-index: 4;
+            position: absolute;
+        }
+        &--minuteHand {
+            width: 1rem;
+            height: 20rem;
+            background-color: red;
+            transform:  rotate(0deg);
+            transform-origin: bottom;
+            z-index: 3;
+            position: absolute;
+    
+        }
+        &--secondHand {
+            width: .5rem;
+            height: 25rem;
+            background-color: yellow;
+            transform: rotate(0deg);
+            transform-origin: bottom;
+            z-index: 5;
+            position: absolute;        
+        }
+    }
+
+    &__numbers {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        color: goldenrod;
+        position: relative;
+        font-size: 4rem;
+
+        & > span {
+            justify-self: center;
+            align-self: center;
+            position: absolute;
+        }
+
+        &--twelve-six {
+            position: absolute;
+            height: 200%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &--one-seven {
+            position: absolute;
+            height: 200%;
+            transform: rotate(30deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-30deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-30deg);
+            }
+        }
+
+        &--two-eight {
+            position: absolute;
+            height: 200%;
+            transform: rotate(60deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-60deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-60deg);
+            }
+        }
+
+
+        &--three-nine {
+            position: absolute;
+            height: 200%;
+            transform: rotate(90deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-90deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-90deg);
+            }
+        }
+
+
+        &--four-ten {
+            position: absolute;
+            height: 200%;
+            transform: rotate(120deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-120deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-120deg);
+            }
+        }
+
+
+        &--five-eleven {
+            position: absolute;
+            height: 200%;
+            transform: rotate(150deg);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            span:nth-child(1) {
+                transform: rotate(-150deg);
+            }
+            span:nth-child(2) {
+                transform: rotate(-150deg);
+            }
+        }
+        
+    }
+    
+
+    
+}

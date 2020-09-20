@@ -5,11 +5,12 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  box-sizing: border-box; }
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow-x: hidden; }
 
 body {
   background-color: #fff;
@@ -20,7 +21,7 @@ body {
   background-color: blueviolet; }
 
 .container {
-  display: grid;
+  display: none;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -73,6 +74,10 @@ body {
     color: goldenrod;
     position: relative;
     font-size: 4rem; }
+    .clock__numbers > span {
+      justify-self: center;
+      align-self: center;
+      position: absolute; }
     .clock__numbers--twelve-six {
       position: absolute;
       height: 200%;
@@ -140,3 +145,42 @@ body {
         transform: rotate(-150deg); }
       .clock__numbers--five-eleven span:nth-child(2) {
         transform: rotate(-150deg); }
+
+.digital {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #03071e, rgba(55, 6, 23, 0.8)); }
+  .digital__clock {
+    width: 80rem;
+    height: 20rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); }
+    .digital__clock__number {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr; }
+      .digital__clock__number__square {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr); }
+        .digital__clock__number__square .digital__bar {
+          background-color: #fff; }
+          .digital__clock__number__square .digital__bar--top {
+            grid-column: 1 / -1;
+            grid-row: 1 / 8;
+            clip-path: polygon(0 0, 100% 0, 85% 15%, 15% 15%); }
+          .digital__clock__number__square .digital__bar--bottom {
+            grid-column: 1 / -1;
+            grid-row: 4 / -1;
+            clip-path: polygon(15% 85%, 85% 85%, 100% 100%, 0 100%); }
+          .digital__clock__number__square .digital__bar--right {
+            grid-column: 3 / -1;
+            grid-row: 1 / -1;
+            clip-path: polygon(85% 15%, 100% 0%, 100% 100%, 85% 88%); }
+          .digital__clock__number__square .digital__bar--left {
+            grid-column: 1 / 8;
+            grid-row: 1 / -1;
+            clip-path: polygon(0 0, 15% 15%, 15% 87%, 0% 100%); }

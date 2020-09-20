@@ -45,7 +45,7 @@ function hours() {
 */
 
 
-/*
+//Number's clock inside a big clock
 const clock = () => {
     const time = new Date();
     // console.log(time.toLocaleString());
@@ -53,9 +53,8 @@ const clock = () => {
     const secondsB = time.getSeconds() < 10 ? "0" + time.getSeconds() : time.getSeconds();
     const minutesB = time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
     const hoursB = time.getHours() < 10 ? "0" + time.getHours() : time.getHours();
-   console.log(time.getSeconds());
-    //document.querySelector('.clock span').textContent = `${hours}:${minutes}:${seconds}`
+    document.querySelector('.clock-inside').textContent = `${hoursB}:${minutesB}:${secondsB}`
    }
    
-   setInterval(clock, 1000);
-   */
+   setInterval(clock, 100);
+   
