@@ -19,9 +19,10 @@ body {
   color: #fff;
   line-height: 1.6;
   background-image: linear-gradient(to right bottom, rgba(0, 0, 255, 0.3), black), url(../image/office.jpg);
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixedgit;
+  background-attachment: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

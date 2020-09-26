@@ -24,9 +24,10 @@ body {
         rgba(blue, 0.3),
         rgba(black, 1)),
     url(../image/office.jpg);    
+    background-repeat: no-repeat;
     background-position: center; 
     background-size: cover;
-    background-attachment: fixedgit ;
+    background-attachment: fixed;
 
 
     display: flex;
