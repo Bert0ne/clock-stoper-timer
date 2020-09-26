@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,30 +10,49 @@
     box-sizing: border-box;
 }
 html {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     font-size: 62.5%;
     overflow-x: hidden;
 }
 body {
     background-color: #fff;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;  
     color: #fff;
     line-height: 1.6;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(blue, 0.3),
+        rgba(black, 1)),
+    url(../image/office.jpg);
+
     
-    background-color: blueviolet;
- 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
 }
 
 
 .container {
-    display: grid;// grid
+    display: flex;// grid
     justify-content: center;
     justify-items: center;
     align-items: center;
-    
-    
-    width: 100vw;
+    flex-direction: column;
+
     height: 100vh;
 
+    .timeZoneName {
+        font-size: 4rem;
+        margin-top: 3rem;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color:  #FFEB3B;
+        
+    }
 }

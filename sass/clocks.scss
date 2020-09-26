@@ -1,8 +1,15 @@
 .clock {
     width: 60rem;
     height: 60rem;
-    border: 1rem dotted goldenrod;
+    border: 6px solid goldenrod;
     border-radius: 50%;
+    box-shadow:
+  0 2.8px 2.2px rgba(255, 255, 255,.1),
+  0 6.7px 5.3px rgba(255, 255, 255, .1),
+  0 12.5px 10px rgba(255, 255, 255, .1),
+  0 22.3px 17.9px rgba(255, 255, 255, .1),
+  0 41.8px 33.4px rgba(255, 255, 255, .1),
+  0 100px 80px rgba(255, 255, 255, .1);
 
     display: grid;
     grid-template-columns: 1fr;
@@ -20,20 +27,20 @@
         &--secondHand {
             border-radius: 10px;
         }
-
+ 
         &--hourHand {
-            width: 1rem;
-            height: 15rem;
-            background-color: green;
+            width: .5rem;
+            height: 13rem;
+            background-color:#ffc107;
             transform: rotate(0deg);
             transform-origin: bottom;
             z-index: 4;
             position: absolute;
         }
         &--minuteHand {
-            width: 1rem;
-            height: 20rem;
-            background-color: red;
+            width: .4rem;
+            height: 23rem;
+            background-color: #ffc107;
             transform:  rotate(0deg);
             transform-origin: bottom;
             z-index: 3;
@@ -41,7 +48,7 @@
     
         }
         &--secondHand {
-            width: .5rem;
+            width: .3rem;
             height: 25rem;
             background-color: yellow;
             transform: rotate(0deg);
@@ -55,8 +62,10 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        text-shadow: 3px 3px 6px rgba(255, 255, 255, .4);
+        
 
-        color: goldenrod;
+        color: #ffc107;
         position: relative;
         font-size: 4rem;
 
@@ -64,6 +73,8 @@
             justify-self: center;
             align-self: center;
             position: absolute;
+
+            
         }
 
         &--twelve-six {
@@ -74,6 +85,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+
+            
         }
 
         &--one-seven {
