@@ -1,1 +1,1 @@
-  [DEMO](https://github.com/Bert0ne/clock-stoper-timer.git) 
+  [DEMO](https://bert0ne.github.io/clock-stoper-timer/) 
