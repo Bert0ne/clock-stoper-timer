@@ -7,7 +7,7 @@ setInterval(() => {
     const time = new Date();
     let secondNum = time.getSeconds() * 6;
     let minuteNum = time.getMinutes() * 6;
-    let hourNum = time.getHours() * 12;
+    let hourNum = time.getHours() * 30;
 
 
     for (let i = 0; i < 3; i++) {
@@ -16,9 +16,9 @@ setInterval(() => {
     clockM[i].style.transform = "rotate("+ minuteNum +"deg)";
     }
 
-    clockH[0].style.transform = "rotate("+ (hourNum + 84)+"deg)"; //TOKIO
+    clockH[0].style.transform = "rotate("+ (hourNum + 210)+"deg)"; //TOKIO
     clockH[1].style.transform = "rotate("+ hourNum+"deg)"; //WARSAW
-    clockH[2].style.transform = "rotate("+ (hourNum - 72)+ "deg)"; // NEW YORK
+    clockH[2].style.transform = "rotate("+ (hourNum - 180)+ "deg)"; // NEW YORK
 
     
     console.log();
