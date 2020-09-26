@@ -23,17 +23,17 @@ body {
         to right bottom,
         rgba(blue, 0.3),
         rgba(black, 1)),
-    url(../image/office.jpg);
-
-    
-    background-repeat: no-repeat;
+    url(../image/office.jpg);    
     background-position: center; 
     background-size: cover;
+    background-attachment: fixed;
 
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;    
+    align-content: center;
+    height: 100vh;
 }
 
 
@@ -44,7 +44,7 @@ body {
     align-items: center;
     flex-direction: column;
 
-    height: 100vh;
+    height: 700px;
 
     .timeZoneName {
         font-size: 4rem;
