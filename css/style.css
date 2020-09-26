@@ -27,7 +27,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
-  height: 100vh; }
+  align-items: center;
+  min-height: 100vh; }
 
 .container {
   display: flex;
@@ -35,7 +36,8 @@ body {
   justify-items: center;
   align-items: center;
   flex-direction: column;
-  height: 700px; }
+  height: auto;
+  padding-top: 100px; }
   .container .timeZoneName {
     font-size: 4rem;
     margin-top: 3rem;
@@ -46,6 +48,10 @@ body {
   @media only screen and (max-width: 500px) {
     .container .timeZoneName {
       font-size: 3rem; } }
+
+@media only screen and (max-width: 600px) {
+  body {
+    flex-direction: row; } }
 
 .clock {
   width: 45rem;
