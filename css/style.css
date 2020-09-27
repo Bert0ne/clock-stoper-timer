@@ -23,6 +23,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -191,3 +192,22 @@ body {
     width: 35rem;
     height: 35rem;
     border: 4px solid goldenrod; } }
+
+.buttons {
+  width: 100vw;
+  height: 80px;
+  background-color: #fff 0.2;
+  position: absolute;
+  top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  font-family: 'Roboto', sans-serif; }
+  .buttons .button {
+    margin: 5px 30px;
+    padding: 15px 25px;
+    color: yellow;
+    border: 1px solid yellow;
+    border-radius: 40px;
+    font-weight: 500; }

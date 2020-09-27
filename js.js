@@ -37,12 +37,11 @@ const clock = () => {
     const minutesB = time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
     const hoursB = time.getHours() < 10 ? "0" + time.getHours() : time.getHours();
     let watch = document.querySelectorAll('.clock-inside');
-    watch[0].textContent = `${hoursB + 7}:${minutesB}:${secondsB}`;
+    
+    watch[0].textContent = `${hoursB}:${minutesB}:${secondsB}`;
     watch[1].textContent = `${hoursB}:${minutesB}:${secondsB}`;
-    watch[2].textContent = `${hoursB - 6}:${minutesB}:${secondsB}`;
-    
-    
-
+    watch[2].textContent = `${hoursB}:${minutesB}:${secondsB}`;
+   
    }
    
    setInterval(clock, 100);
