@@ -44,5 +44,5 @@ const clock = () => {
    
    }
    
-   setInterval(clock, 100);
+   //setInterval(clock, 100);
    

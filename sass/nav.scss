@@ -1,0 +1,62 @@
+.nav {
+
+    align-self: flex-start;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    background-color: rgba($color: #000000, $alpha: .5);
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: #FFEB3B;
+        opacity: 1;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer;
+        
+        padding: 20px;
+        transition: 0.6s;
+
+        
+        &:hover  {
+            background-color:  #FFEB3B;
+            color: black;
+        }
+        &:hover &__clock, &__timer, &__stoper {
+            color: black;
+        }
+        &:hover &__clock {
+            color: black;
+        }
+        &:hover .nav__icon {
+            fill: black;
+            fill-rule: evenodd;        
+        }
+        
+        
+    }
+    &__icon {
+        height: 40px;
+        width: 40px; 
+
+        fill: #FFEB3B;
+        fill-rule: evenodd;
+        transition: 0.6s;
+
+
+       
+    }
+
+ 
+} 
