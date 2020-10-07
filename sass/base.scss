@@ -42,6 +42,28 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+.index__timer {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(blue, 0.4),
+        rgba(black, .3)),
+    url(../image/kitchen1.jpg);    
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
+}
+.index__stoper {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(blue, 0.3),
+        rgba(black, 1)),
+    url(../image/stoper.jpg);    
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 .container {
     display: flex;// grid
@@ -69,6 +91,7 @@ body {
     
         
     }
+  
 }
 @media only screen and (max-width: 600px) {
     body {
@@ -76,4 +99,10 @@ body {
     }
 
     
+}
+a,
+a:link,
+a:active,
+a:visited {
+    text-decoration: none;
 }

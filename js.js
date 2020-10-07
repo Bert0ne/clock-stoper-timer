@@ -32,17 +32,22 @@ setInterval(() => {
 //Number's clock inside a big clock
 const clock = () => {
     const time = new Date();
-
+    
     const secondsB = time.getSeconds() < 10 ? "0" + time.getSeconds() : time.getSeconds();
     const minutesB = time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
     const hoursB = time.getHours() < 10 ? "0" + time.getHours() : time.getHours();
     let watch = document.querySelectorAll('.clock-inside');
     
-    watch[0].textContent = `${hoursB}:${minutesB}:${secondsB}`;
-    watch[1].textContent = `${hoursB}:${minutesB}:${secondsB}`;
-    watch[2].textContent = `${hoursB}:${minutesB}:${secondsB}`;
+     //watch[0].textContent = `${hoursB}:${minutesB}:${secondsB}`;
+    //watch[1].textContent = `${hoursB}:${minutesB}:${secondsB}`;
+   //watch[2].textContent = `${hoursB}:${minutesB}:${secondsB}`;
    
+   document.title = `${hoursB}:${minutesB}:${secondsB}`;
    }
    
-   //setInterval(clock, 100);
-   
+  setInterval(clock, 100);
+
+
+  if (document.querySelector('.index__clock')) {
+      clock()
+  }
