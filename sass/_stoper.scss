@@ -1,0 +1,99 @@
+/* @font-face {
+    font-family: 'digital';
+    src : url('/digital-7.regular.ttf')
+} */
+.index__stoper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.stoper__time {
+    font-size: 15rem;
+    font-family: 'Roboto', sans-serif;
+    color: $primary-color;
+    margin-top: 200px;
+    margin-bottom: 0 !important;
+    padding: 0;
+ 
+
+ 
+    .milisec {
+        font-size: 14rem;
+    }
+}
+
+.stoper__buttons {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-family: 'Roboto', sans-serif;
+    background-color:rgba($color: #000000, $alpha: .5);
+    border-radius: 15px;
+}
+.btn {
+    font-size: 5rem;
+    padding: 1rem 3.4rem;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    width: 200px;
+
+    &__start {
+        color: #fff;
+        transition: .2s;
+        &:hover {
+            background-color: #fff;
+            color: blue;
+        }
+    }
+
+    &__reset {
+        color: $primary-color;
+        transition: .2s;
+        &:hover {
+            background-color: $primary-color;
+            color: #000;
+        }
+    }
+    
+}
+.stoper__tab {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    margin-top: 20px;
+    color: $primary-color;
+    
+} .tabC {
+    margin: 0 auto;
+}
+table tr th {
+    padding: 20px;
+}
+table tr td {
+    text-align: center;
+}
+.seconds {
+    width: 500px;
+}
+.lap__table {
+    margin-bottom: 50px;
+    list-style-type: decimal;
+
+
+    li {
+        display: list-item;
+        list-style-type: decimal;
+        font-size: 6rem;
+
+    }
+} 

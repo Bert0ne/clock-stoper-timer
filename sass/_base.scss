@@ -22,12 +22,6 @@ body {
     
     position: relative;
 
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
     
     min-height: 100vh;
 } 
@@ -41,6 +35,13 @@ body {
     background-position: center; 
     background-size: cover;
     background-attachment: fixed;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
 }
 .index__timer {
     background-image: linear-gradient(
@@ -81,7 +82,8 @@ body {
         text-transform: uppercase;
         font-family: 'Roboto', sans-serif;
         font-weight: 500;
-        color:  #FFEB3B;
+        color:  $primary-color;
+
         
     }
     @media only screen and (max-width: 500px) {
