@@ -62,6 +62,25 @@
             color: #000;
         }
     }
+
+    &__stop {
+        color: red;
+        transition: .2s;
+        &:hover {
+            background-color: red;
+            color: #000;
+        }
+    }
+
+    &__loop {
+        color: blue;
+        transition: .2s;
+        &:hover {
+            background-color: blue;
+            color: #000;
+        }
+    }
+
     
 }
 .stoper__tab {

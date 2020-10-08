@@ -306,6 +306,18 @@ a:visited {
     .btn__reset:hover {
       background-color: #FFEB3B;
       color: #000; }
+  .btn__stop {
+    color: red;
+    transition: .2s; }
+    .btn__stop:hover {
+      background-color: red;
+      color: #000; }
+  .btn__loop {
+    color: blue;
+    transition: .2s; }
+    .btn__loop:hover {
+      background-color: blue;
+      color: #000; }
 
 .stoper__tab {
   display: flex;

@@ -71,16 +71,47 @@
   let stopWatchEl = document.querySelector('.stoper__time')
 
   let btnStart = document.querySelector('.btn__start');
+  let btnStop = document.querySelector('.btn__stop');
   let btnReset = document.querySelector('.btn__reset');
+  let btnLoop = document.querySelector('.btn__loop');
+
   let ul = document.querySelector('.lap__table');
   
 
-  function start() {
-    timer = setInterval(run, 10);
-  }
+  btnStart.addEventListener('click', function() {
+    if (!checkStart) {
+      timer = setInterval(run, 10);
+      checkStart = !checkStart;
+    }
+  });
+
+
+  btnStop.addEventListener('click', function() {
+    if(checkStart){
+      clearInterval(timer);
+      checkStart = !checkStart;
+    }
+  })
+
+  btnLoop.addEventListener('click', function() {
+    if(checkStart){
+      addLap();
+    }
+  })
+
+  btnReset.addEventListener('click', function() {
+    if (!checkStart) {
+      m = '0';
+      s = '0';
+      ms = '0';
+      stopWatchEl.textContent ="00:00:00"
+      
+      ul.textContent = '';
+    } 
+  })
 
   function run() {
-    stopWatchEl.textContent = (m < 10 ? "0" + m : m) +  ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "0" + ms : ms);
+    stopWatchEl.textContent = getTime();
     ms++;
     if(ms == 100) {
       ms = 0;
@@ -92,61 +123,20 @@
 
     }
   }
-  btnStart.addEventListener('click', function() {
-    if (!checkStart) {
-      start();
-      checkStart = !checkStart;
-      btnStart.textContent = "Stop";
-      btnStart.style.color = "red";
-      btnStart.style.border = "1px solid red";
-      btnStart.style.backgroundColor = "transparent";
-
-      btnReset.textContent = "Lap";
-      btnReset.style.color = "blue";
-      btnReset.style.border = "1px solid blue";
-      btnReset.style.backgroundColor = "transparent";
+ 
+  function getTime() {
+    return (m < 10 ? "0" + m : m) +  ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "0" + ms : ms);
+  }
 
 
 
-    } else {
-      clearInterval(timer);
-
-      checkStart = !checkStart;
-
-      btnStart.textContent = "Start";
-      btnStart.style.color = "white";
-      btnStart.style.border = "1px solid white";
-      btnStart.style.backgroundColor = "transparent";
-
-
-      btnReset.textContent = "Reset";
-      btnReset.style.color = " #FFEB3B";
-      btnReset.style.border = "1px solid  #FFEB3B";
-      btnReset.style.backgroundColor = "transparent";
-
-    }
-
-    btnReset.addEventListener('click', function() {
-      if (!checkStart) {
-        m = '0';
-        s = '0';
-        ms = '0';
-        stopWatchEl.textContent ="00:00:00"
-        
-       ul.textContent = '';
-
-      } else {
-        addLap()
-      }
-    })
-
-  });
-
-function addLap() {
+  function addLap() {
   
-  let lapRound = document.createElement('li');
-  lapRound.innerText = (m < 10 ? "0" + m : m) +  ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "0" + ms : ms);
-  ul.appendChild(lapRound);
+    let lapRound = document.createElement('li');
+    lapRound.innerText = getTime();
+  
+    ul.appendChild(lapRound);  
+
 
 
 
