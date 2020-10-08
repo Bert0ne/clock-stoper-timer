@@ -65,18 +65,28 @@
   let ms = 0;
   let s = 0; 
   let m = 0;
+  let n = 0;
   let h = 0;
+  let miliSecForLapTime = 0;
   let timer;
   let checkStart = false;
   let stopWatchEl = document.querySelector('.stoper__time')
-
+  let lapA = [0,0];
+  let lapMiliSec;
   let btnStart = document.querySelector('.btn__start');
   let btnStop = document.querySelector('.btn__stop');
   let btnReset = document.querySelector('.btn__reset');
   let btnLoop = document.querySelector('.btn__loop');
 
-  let ul = document.querySelector('.lap__table');
+  let tab = document.querySelector('.lap__table');
   
+  function stop() {
+    if(checkStart){
+      clearInterval(timer);
+      checkStart = !checkStart;
+    }
+  }
+
 
   btnStart.addEventListener('click', function() {
     if (!checkStart) {
@@ -87,10 +97,7 @@
 
 
   btnStop.addEventListener('click', function() {
-    if(checkStart){
-      clearInterval(timer);
-      checkStart = !checkStart;
-    }
+    stop();
   })
 
   btnLoop.addEventListener('click', function() {
@@ -100,18 +107,20 @@
   })
 
   btnReset.addEventListener('click', function() {
+    stop();
     if (!checkStart) {
       m = '0';
       s = '0';
       ms = '0';
       stopWatchEl.textContent ="00:00:00"
-      
-      ul.textContent = '';
+      n = 0;
+      tab.textContent = '';
     } 
   })
 
   function run() {
     stopWatchEl.textContent = getTime();
+    miliSecForLapTime++;
     ms++;
     if(ms == 100) {
       ms = 0;
@@ -131,16 +140,48 @@
 
 
   function addLap() {
-  
-    let lapRound = document.createElement('li');
-    lapRound.innerText = getTime();
-  
-    ul.appendChild(lapRound);  
+    // tab. Parent element
+    let lapRound = document.createElement('tr');   // Create new element
+    //lapRound.innerText = getTime();
 
+    let test = tab.firstChild; // FIRST CHILD TO PUT LAPROUND ALWAYS ON THE TOP " BEFORE FIRST CHILD"
+    n++;
+    lapA.unshift(miliSecForLapTime) 
+    lapMiliSec = ((lapA[0] - lapA[1]) * 10) ;
+    let lapScore = lapCount(lapMiliSec)
 
+    lapRound.innerHTML = `<td>${n}</td><td class="lap__time">${lapScore}</td><td class="whole__time">${getTime()}</td>`
+    
+    tab.insertBefore(lapRound, test);  
+    
+   // let wholeTime = document.querySelectorAll('.whole__time');
+    //let lapTime = document.querySelectorAll('.lap__time');
+}
+function lapCount(data) {
+  let m, m1, m2, s,s1,s2;
+  m = (data / 60000) ;
+  m1 = Math.floor(m);
+  m2 = data - (m1 * 60000);
 
+  s = m2 / 1000;
+  s1 = Math.floor(s);
+  s2 = data - (s1 * 1000);
+
+  mm = (data % 1000) / 10;
+
+  //console.log(m1 + ' ' + s1 + '  ' + s2 + '  ' + mm );
+  return (m1 < 10 ? "0" + m1 : m1) +  ":" + (s1 < 10 ? "0" + s1 : s1) + ":" + (mm < 10 ? "0" + mm : mm);
 
 }
 
-
 }
+
+/*
+ let dummy = data * 10;
+  let ms = (dummy % 100);
+  let s = Math.floor(dummy / 100);
+  let m = Math.floor(s / 60)
+  console.log(dummy);
+
+  return (m < 10 ? "0" + m : m) +  ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "0" + ms : ms);
+  */
