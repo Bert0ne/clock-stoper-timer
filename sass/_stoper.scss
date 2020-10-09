@@ -80,7 +80,7 @@
             color: #000;
         }
     }
-
+   
     
 }
 .stoper__tab {
@@ -116,3 +116,42 @@ table tr td {
 
     }
 } 
+@media only screen and (max-width: 1400px) {
+    .stoper__time{
+        font-size: 8rem;
+    }
+    .btn {
+        font-size: 2rem;
+        width: 120px;
+    } 
+    .stoper__tab,
+    .lap__table {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .stoper__time{
+        font-size: 7rem;
+    }
+    .btn {
+        font-size: 1.7rem;
+        width: 100px;
+    } 
+    .stoper__tab,
+    .lap__table {
+        font-size: 1.7rem;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .stoper__buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        width: auto;
+    }
+
+    .btn {
+        width: 45%;
+        margin: 0 10%;
+    }
+}
