@@ -1,0 +1,27 @@
+
+
+input[type="date"],
+input[type="time"] {
+    width: 200px;
+    height: 50px;
+}
+input[type="text"] {
+    background-color: transparent;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 2rem;
+}
+input[type="radio"] {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+  
+.checkbox_label {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-right: 30px;
+    margin-left: 5px;
+
+}

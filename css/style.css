@@ -29,9 +29,10 @@ body {
   background-attachment: fixed;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-direction: row; }
 
 .index__timer {
   background-image: linear-gradient(to right bottom, rgba(0, 0, 255, 0.4), rgba(0, 0, 0, 0.3)), url(../image/kitchen1.jpg);
@@ -75,6 +76,20 @@ a:link,
 a:active,
 a:visited {
   text-decoration: none; }
+
+footer {
+  width: 100vw;
+  height: 50px;
+  background-color: #000;
+  color: #ddd;
+  margin: 100px 0 0 0;
+  justify-self: flex-end;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem; }
 
 .clock {
   width: 45rem;
@@ -215,9 +230,19 @@ a:visited {
     height: 35rem;
     border: 4px solid goldenrod; } }
 
+.center_clock {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-direction: row; }
+
 .nav {
-  align-self: flex-start;
   position: absolute;
+  align-self: flex-start;
   top: 0;
   width: 100vw;
   height: auto;
@@ -272,7 +297,8 @@ a:visited {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100vh; }
 
 .stoper__time {
   font-size: 15rem;
@@ -289,18 +315,18 @@ a:visited {
   justify-content: center;
   align-self: center;
   font-family: 'Roboto', sans-serif;
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px; }
 
 .btn {
-  font-size: 5rem;
+  font-size: 3.03rem;
   padding: 1rem 3.4rem;
   border: 1px solid;
   border-radius: 15px;
-  margin: 10px;
+  margin: 20px 10px;
   cursor: pointer;
   background-color: transparent;
-  width: 200px; }
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.5); }
   .btn__start {
     color: #fff;
     transition: .2s; }
@@ -384,3 +410,197 @@ table tr td {
   .btn {
     width: 45%;
     margin: 0 10%; } }
+
+.index__timer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.timer__display {
+  color: #FFEB3B;
+  width: auto;
+  height: 50px;
+  text-align: center;
+  font-size: 12rem; }
+
+.mt {
+  margin-top: 350px; }
+
+.timer__buttons {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-item: center;
+  justify-content: center; }
+  .timer__buttons .timer__btn {
+    font-size: 3.03rem;
+    padding: 1rem 3.4rem;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    width: 220px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px; }
+    .timer__buttons .timer__btn__start {
+      color: #fff;
+      transition: .2s; }
+      .timer__buttons .timer__btn__start:hover {
+        background-color: #fff;
+        color: blue; }
+    .timer__buttons .timer__btn__reset {
+      color: #FFEB3B;
+      transition: .2s; }
+      .timer__buttons .timer__btn__reset:hover {
+        background-color: #FFEB3B;
+        color: #000; }
+    .timer__buttons .timer__btn__stop {
+      color: red;
+      transition: .2s; }
+      .timer__buttons .timer__btn__stop:hover {
+        background-color: red;
+        color: #000; }
+    .timer__buttons .timer__btn__edit {
+      color: #19bcd8;
+      transition: .2s; }
+      .timer__buttons .timer__btn__edit:hover {
+        background-color: #19bcd8;
+        color: #000; }
+
+.modal__background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #000;
+  opacity: .5;
+  display: block; }
+
+.modal {
+  width: 700px;
+  height: 600px;
+  border: 1px solid #fff;
+  margin-top: 100px;
+  border-radius: 15px;
+  position: fixed;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif; }
+
+.modal__top {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid  #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; }
+  .modal__top p {
+    font-size: 3rem;
+    font-family: inherit; }
+  .modal__top svg {
+    width: 45px;
+    height: 45px; }
+
+.modal__center {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+  .modal__center .checkboxs {
+    justify-self: flex-start;
+    width: 100%;
+    padding: 40px 30px; }
+    .modal__center .checkboxs form {
+      display: inline-block;
+      font-size: 1rem; }
+  .modal__center .counting__day__hours {
+    display: flex;
+    width: 100%;
+    height: 180px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; }
+    .modal__center .counting__day__hours form {
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      width: 100%;
+      text-align: center; }
+      .modal__center .counting__day__hours form input[type="text"] {
+        width: 65%;
+        color: white;
+        background-color: transparent;
+        text-align: center; }
+      .modal__center .counting__day__hours form ::placeholder {
+        color: white;
+        opacity: 1; }
+    .modal__center .counting__day__hours .__hoursInputs {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+      .modal__center .counting__day__hours .__hoursInputs input {
+        background-color: transparent;
+        border-radius: 15px;
+        color: #fff;
+        width: 25%;
+        margin: 0 10px;
+        text-align: center; }
+
+.modal__bottom {
+  border-top: 1px solid #fff;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer; }
+  .modal__bottom .btn__modal {
+    font-size: 2.5rem;
+    font-family: inherit;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: .3s; }
+    .modal__bottom .btn__modal:hover:first-child {
+      color: blue; }
+    .modal__bottom .btn__modal:hover:last-child {
+      color: red; }
+
+input[type="date"],
+input[type="time"] {
+  width: 200px;
+  height: 50px; }
+
+input[type="text"] {
+  background-color: transparent;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 2rem; }
+
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle; }
+
+.checkbox_label {
+  font-size: 2rem;
+  vertical-align: middle;
+  margin-right: 30px;
+  margin-left: 5px; }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Timer</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="index__timer">
@@ -27,137 +27,78 @@
         </a>
     </div>
 
-    <div class="container">
-        <div class="clock">
-            <div class="clock__hands">
-                <div class="clock__hands--hourHand"></div>
-                <div class="clock__hands--minuteHand"></div>
-                <div class="clock__hands--secondHand"></div>
-            </div>  
+    <div class="timer__display mt">
+        <div class=" timer_display__title"></div>
+        <div class=" timer_display__counting">00:00:00</div>
+    </div>
 
-            <div class="clock__numbers">
-                <!--  <span class="clock-inside">d</span>-->
+    <div class="timer__buttons">
+        <button class="timer__btn timer__btn__edit">Set Timer</button>
+        <button class="timer__btn timer__btn__start">Start</button>
+        <button class="timer__btn timer__btn__stop">Stop</button>
+        <button class="timer__btn timer__btn__reset">Reset</button>
+    </div>
+<div class="modal__background">
+</div>
+    <div class="modal">
+        <div class="modal__top">
+            <p>Edit Timer</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </div>
+        <div class="modal__center">
 
-                <div class="clock__numbers--twelve-six">
-                    <span>12</span> <span>6</span>
-                </div>
 
-                <div class="clock__numbers--one-seven">
-                    <span>1</span> <span>7</span>
-                </div>
+            <div class="checkboxs">
+                <form action="#">
+                    <input type="radio" id="countingDay" name="gender" value="Day and Hour"checked="checked" >
+                    <label class="checkbox_label" for="countingDay">Day and Hour</label>
 
-                <div class="clock__numbers--two-eight">
-                    <span>2</span> <span>8</span>
-                </div>
+                    <input type="radio" id="CountingHour" name="gender" value="Hours">
+                    <label  class="checkbox_label" for="CountingHour">Hours</label><br>
+                </form>
+            </div>
+            
 
-                <div class="clock__numbers--three-nine">
-                    <span>3</span> <span>9</span>
-                </div>
+            <div class="counting__day__hours">
 
-                <div class="clock__numbers--four-ten">
-                    <span>4</span> <span>10</span>
-                </div>
+                <form action="#">
 
-                <div class="clock__numbers--five-eleven">
-                    <span>5</span> <span>11</span>
-                </div>
-                
+                    <input class="inputTitle" type="text" id="Title" placeholder="Put Title Here">
+                    <div class="__hoursInputs">
+                         <input type="date" id="start" name="trip-start">
+                         <input type="time" id="start" name="trip-start">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="counting__hours">
+
+                <form action="#">
+
+                    <input type="text" id="Title">
+    
+                    <input type="text" id="Hours">
+
+                    <input type="text" id="Minutes">
+
+                    <input type="text" id="Seconds">
+
+
+                </form>
             </div>
 
 
         </div>
-        <h2 class="timeZoneName">Tokyo</h2>
-
-    </div>
-
-
-    <div class="container">
-        <div class="clock">
-            <div class="clock__hands">
-                <div class="clock__hands--hourHand"></div>
-                <div class="clock__hands--minuteHand"></div>
-                <div class="clock__hands--secondHand"></div>
-            </div>  
-
-            <div class="clock__numbers">
-                <!--  <span class="clock-inside">d</span>-->
-
-                <div class="clock__numbers--twelve-six">
-                    <span>12</span> <span>6</span>
-                </div>
-
-                <div class="clock__numbers--one-seven">
-                    <span>1</span> <span>7</span>
-                </div>
-
-                <div class="clock__numbers--two-eight">
-                    <span>2</span> <span>8</span>
-                </div>
-
-                <div class="clock__numbers--three-nine">
-                    <span>3</span> <span>9</span>
-                </div>
-
-                <div class="clock__numbers--four-ten">
-                    <span>4</span> <span>10</span>
-                </div>
-
-                <div class="clock__numbers--five-eleven">
-                    <span>5</span> <span>11</span>
-                </div>
-                
-            </div>
-
+        <div class="modal__bottom">
+            <bottom class="btn__modal">Start</bottom>
+            <bottom class="btn__modal">Cancel</bottom>
         </div>
-        <h2 class="timeZoneName">Warsaw</h2>
-
     </div>
 
-
-
-    <div class="container">
-        <div class="clock">
-            <div class="clock__hands">
-                <div class="clock__hands--hourHand"></div>
-                <div class="clock__hands--minuteHand"></div>
-                <div class="clock__hands--secondHand"></div>
-            </div>  
-
-            <div class="clock__numbers">
-                <!--  <span class="clock-inside">d</span>-->
-
-                <div class="clock__numbers--twelve-six">
-                    <span>12</span> <span>6</span>
-                </div>
-
-                <div class="clock__numbers--one-seven">
-                    <span>1</span> <span>7</span>
-                </div>
-
-                <div class="clock__numbers--two-eight">
-                    <span>2</span> <span>8</span>
-                </div>
-
-                <div class="clock__numbers--three-nine">
-                    <span>3</span> <span>9</span>
-                </div>
-
-                <div class="clock__numbers--four-ten">
-                    <span>4</span> <span>10</span>
-                </div>
-
-                <div class="clock__numbers--five-eleven">
-                    <span>5</span> <span>11</span>
-                </div>
-                
-            </div>
-
-        </div>
-        <h2 class="timeZoneName">New York</h2>
-
-    </div>
- 
-
+    <footer>
+        <p>Bert0ne</p>
+    </footer>
 
     <script src="./js.js"></script> 
 </body>

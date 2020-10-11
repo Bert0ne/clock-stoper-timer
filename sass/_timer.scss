@@ -1,0 +1,240 @@
+.index__timer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer__display {
+    color:$primary-color;
+    width: auto;
+    height: 50px;
+    text-align: center;
+    font-size: 12rem;
+}
+.mt {
+    margin-top: 350px;
+
+}
+.timer__buttons {
+    margin-top: 150px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-item: center;
+    justify-content: center;
+
+
+.timer__btn {
+    font-size: 3.03rem;
+    padding: 1rem 3.4rem;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    width: 220px;
+    background-color:rgba($color: #000000, $alpha: .5);
+
+    font-family: 'Roboto', sans-serif;
+    background-color:rgba($color: #000000, $alpha: .5);
+    border-radius: 15px;
+
+
+    &__start {
+        color: #fff;
+        transition: .2s;
+        &:hover {
+            background-color: #fff;
+            color: blue;
+        }
+    }
+
+    &__reset {
+        color: $primary-color;
+        transition: .2s;
+        &:hover {
+            background-color: $primary-color;
+            color: #000;
+        }
+    }
+
+    &__stop {
+        color: red;
+        transition: .2s;
+        &:hover {
+            background-color: red;
+            color: #000;
+        }
+    }
+
+    &__edit {
+        color: rgba($color: #19bcd8, $alpha: 1.0);;
+        transition: .2s;
+        &:hover {
+            background-color: rgba($color: #19bcd8, $alpha: 1.0);;
+            color: #000;
+        }
+    }
+    }
+}
+.modal__background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #000;
+    opacity: .5;
+    display: block;
+
+}
+.modal {
+    width: 700px;
+    height: 600px;
+    border: 1px solid #fff;
+    margin-top: 100px;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 11;
+
+    background-color: rgba($color: #000000, $alpha: .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+    //filter: blur(none);
+   // backdrop-filter: blur(10px);
+
+}
+.modal__top {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid  #fff;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 20px;
+
+    p {
+        font-size: 3rem;
+        font-family: inherit;
+    }
+
+    svg {
+        width: 45px;
+        height: 45px;
+    }
+    
+}
+.modal__center {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+
+
+   .checkboxs {
+       justify-self: flex-start;
+       width: 100%;
+       padding: 40px 30px;
+
+
+       form {
+           display: inline-block;
+           font-size: 1rem;
+       }
+   }
+
+   .counting__day__hours {
+
+    display: flex;
+    width: 100%;
+    height: 180px; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+        form {
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            text-align: center;
+
+            input[type="text"] {
+                width: 65%;
+                color: white;
+                background-color: transparent;
+                text-align: center;
+
+               
+            }
+            ::placeholder {
+                color: white;
+                opacity: 1;
+            }
+
+
+        }
+
+        .__hoursInputs {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            input {
+                background-color:transparent;
+                border-radius: 15px;
+                color: #fff;
+                width: 25%;
+                margin: 0 10px;
+                text-align: center;
+            }
+        }
+
+        
+   }
+   
+}
+
+
+.modal__bottom {
+    border-top: 1px solid #fff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+
+
+    .btn__modal {
+        font-size: 2.5rem;
+        font-family: inherit;
+        padding: 10px;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover:first-child {
+            color: blue;
+
+        }
+        &:hover:last-child {
+            color: red;
+
+        }
+    }
+}
