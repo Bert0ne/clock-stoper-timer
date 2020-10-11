@@ -181,7 +181,7 @@ function lapCount(data) {
 
 
 
-
+//!switch radio inside modal
   if (document.querySelector('input[name="radioSel"]')) {
     document.querySelectorAll('input[name="radioSel"]').forEach((elem) => {
       elem.addEventListener("change", function(event) {
@@ -196,23 +196,54 @@ function lapCount(data) {
   }
 
   function displayHours() {
-    
     document.querySelector('.counting__day__hours').style.display = "none";
     document.querySelector('.counting__hours').style.display = "flex";
-
   }
 
   function displayDays() {
     document.querySelector('.counting__day__hours').style.display = "flex";
     document.querySelector('.counting__hours').style.display = "none";
-
   }
 
 
 
+
+
+
+  document.querySelector('.btn__modal__cancel').addEventListener('click', closeModal);
+  //document.querySelector('.modal__background').addEventListener('click', closeModal);
+  document.querySelector('.modal__top svg').addEventListener('click', closeModal);
+
+  function closeModal() {
+    document.querySelector('.modal__background').style.display = "none";
+
+    document.querySelector('.nav').style.filter = "blur(0)";
+    document.querySelector('.timer__buttons').style.filter = "blur(0)";
+    document.querySelector('.timer__display').style.filter = "blur(0)";
+
+
+  }
+  window.onclick = function(event) {
+    if (event.target == document.querySelector('.modal__background')) {
+      document.querySelector('.modal__background').style.display = "none";
+      document.querySelector('.nav').style.filter = "blur(0)";
+      document.querySelector('.timer__buttons').style.filter = "blur(0)";
+      document.querySelector('.timer__display').style.filter = "blur(0)";
+    }
+  }
+
+  document.querySelector('.timer__btn__edit').addEventListener('click', openModal);
+
+  function openModal() {
+    document.querySelector('.modal__background').style.display = "flex";
+
+
+    document.querySelector('.nav').style.filter = "blur(10px)";
+    document.querySelector('.timer__buttons').style.filter = "blur(10px)";
+    document.querySelector('.timer__display').style.filter = "blur(10px)";
 }
 
-
+}
 
 
 

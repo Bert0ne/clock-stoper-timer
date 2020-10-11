@@ -5,6 +5,7 @@
     align-content: center;
     align-items: center;
     flex-direction: column;
+    backface-visibility: hidden;
 }
 
 .timer__display {
@@ -88,19 +89,24 @@
     z-index: 10;
     background-color: #000;
     opacity: .8;
-    display: block;
-
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
 }
 .modal {
     width: 700px;
     height: 600px;
     border: 1px solid #fff;
-    margin-top: 100px;
     border-radius: 15px;
     position: fixed;
     z-index: 11;
 
-    background-color: rgba($color: #000000, $alpha: .6);
+
+    animation-name: animatetop;
+    animation-duration: .4s;
+
+    background-color: rgba($color: #000000, $alpha: 1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,7 +114,6 @@
     font-family: Arial, Helvetica, sans-serif;
 
     
-    //filter: blur(none);
    // backdrop-filter: blur(10px);
 
 }
@@ -281,7 +286,9 @@
         padding: 10px;
         margin-right: 20px;
         cursor: pointer;
-        transition: .3s;
+        
+
+
 
         &:hover:first-child {
             color:   #FFEB3B;
@@ -292,4 +299,8 @@
 
         }
     }
+}
+@keyframes animatetop {
+  from {margin-top:-20%; opacity:0}
+  to {margin-top:0; opacity:1}
 }

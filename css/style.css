@@ -417,7 +417,8 @@ table tr td {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  backface-visibility: hidden; }
 
 .timer__display {
   color: #FFEB3B;
@@ -481,17 +482,21 @@ table tr td {
   z-index: 10;
   background-color: #000;
   opacity: .8;
-  display: block; }
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden; }
 
 .modal {
   width: 700px;
   height: 600px;
   border: 1px solid #fff;
-  margin-top: 100px;
   border-radius: 15px;
   position: fixed;
   z-index: 11;
-  background-color: rgba(0, 0, 0, 0.6);
+  animation-name: animatetop;
+  animation-duration: .4s;
+  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -608,12 +613,19 @@ table tr td {
     font-family: inherit;
     padding: 10px;
     margin-right: 20px;
-    cursor: pointer;
-    transition: .3s; }
+    cursor: pointer; }
     .modal__bottom .btn__modal:hover:first-child {
       color: #FFEB3B; }
     .modal__bottom .btn__modal:hover:last-child {
       color: red; }
+
+@keyframes animatetop {
+  from {
+    margin-top: -20%;
+    opacity: 0; }
+  to {
+    margin-top: 0;
+    opacity: 1; } }
 
 input[type="date"],
 input[type="time"] {
