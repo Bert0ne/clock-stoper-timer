@@ -176,25 +176,41 @@ function lapCount(data) {
 
 }
 
+} else if (document.querySelector('.index__timer')) {
+
+
+
+
+
+  if (document.querySelector('input[name="radioSel"]')) {
+    document.querySelectorAll('input[name="radioSel"]').forEach((elem) => {
+      elem.addEventListener("change", function(event) {
+        var item = event.target.value;
+        if(item == "Hours") {
+          displayHours();
+        } else {
+          displayDays();
+        }
+      });
+    });
+  }
+
+  function displayHours() {
+    
+    document.querySelector('.counting__day__hours').style.display = "none";
+    document.querySelector('.counting__hours').style.display = "flex";
+
+  }
+
+  function displayDays() {
+    document.querySelector('.counting__day__hours').style.display = "flex";
+    document.querySelector('.counting__hours').style.display = "none";
+
+  }
+
+
+
 }
-
-/*
- let dummy = data * 10;
-  let ms = (dummy % 100);
-  let s = Math.floor(dummy / 100);
-  let m = Math.floor(s / 60)
-  console.log(dummDy);
-
-  return (m < 10 ? "0" + m : m) +  ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "0" + ms : ms);
-  */
-
-
-
-
-
-
-
-
 
 
 

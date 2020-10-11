@@ -480,7 +480,7 @@ table tr td {
   height: 100vh;
   z-index: 10;
   background-color: #000;
-  opacity: .5;
+  opacity: .8;
   display: block; }
 
 .modal {
@@ -491,7 +491,7 @@ table tr td {
   border-radius: 15px;
   position: fixed;
   z-index: 11;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -511,7 +511,12 @@ table tr td {
     font-family: inherit; }
   .modal__top svg {
     width: 45px;
-    height: 45px; }
+    height: 45px;
+    transition: .4s;
+    fill: red; }
+    .modal__top svg:hover {
+      cursor: pointer;
+      fill: red; }
 
 .modal__center {
   display: flex;
@@ -528,7 +533,7 @@ table tr td {
       display: inline-block;
       font-size: 1rem; }
   .modal__center .counting__day__hours {
-    display: flex;
+    display: none;
     width: 100%;
     height: 180px;
     justify-content: center;
@@ -550,7 +555,7 @@ table tr td {
         color: white;
         opacity: 1; }
     .modal__center .counting__day__hours .__hoursInputs {
-      margin-top: 20px;
+      margin-top: 40px;
       width: 100%;
       display: flex;
       justify-content: center; }
@@ -561,6 +566,34 @@ table tr td {
         width: 25%;
         margin: 0 10px;
         text-align: center; }
+      .modal__center .counting__day__hours .__hoursInputs :placeholder {
+        color: white;
+        opacity: 1; }
+  .modal__center .counting__hours {
+    display: flex;
+    width: 100%;
+    height: 180px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; }
+    .modal__center .counting__hours input {
+      color: #fff;
+      text-align: center; }
+    .modal__center .counting__hours ::placeholder {
+      color: white;
+      opacity: 1; }
+    .modal__center .counting__hours .__hoursInputs {
+      margin-top: 40px; }
+      .modal__center .counting__hours .__hoursInputs input {
+        text-align: center;
+        color: #fff;
+        background-color: transparent;
+        width: 17%;
+        margin: 0 10px; }
+      .modal__center .counting__hours .__hoursInputs ::placeholder {
+        color: white;
+        opacity: 1; }
 
 .modal__bottom {
   border-top: 1px solid #fff;
@@ -578,7 +611,7 @@ table tr td {
     cursor: pointer;
     transition: .3s; }
     .modal__bottom .btn__modal:hover:first-child {
-      color: blue; }
+      color: #FFEB3B; }
     .modal__bottom .btn__modal:hover:last-child {
       color: red; }
 

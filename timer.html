@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Timer</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -38,6 +40,9 @@
         <button class="timer__btn timer__btn__stop">Stop</button>
         <button class="timer__btn timer__btn__reset">Reset</button>
     </div>
+
+
+
 <div class="modal__background">
 </div>
     <div class="modal">
@@ -50,10 +55,10 @@
 
             <div class="checkboxs">
                 <form action="#">
-                    <input type="radio" id="countingDay" name="gender" value="Day and Hour"checked="checked" >
+                    <input type="radio" id="countingDay" name="radioSel" value="DayS"checked="checked" >
                     <label class="checkbox_label" for="countingDay">Day and Hour</label>
 
-                    <input type="radio" id="CountingHour" name="gender" value="Hours">
+                    <input type="radio" id="CountingHour" name="radioSel" value="Hours">
                     <label  class="checkbox_label" for="CountingHour">Hours</label><br>
                 </form>
             </div>
@@ -76,14 +81,15 @@
 
                 <form action="#">
 
-                    <input type="text" id="Title">
-    
-                    <input type="text" id="Hours">
+                    <input type="text" id="Title" placeholder="Put Title Here">
 
-                    <input type="text" id="Minutes">
+                 <div class="__hoursInputs">   
+                    <input type="text" id="Hours" placeholder="Hours">
 
-                    <input type="text" id="Seconds">
+                    <input type="text" id="Minutes" placeholder="Minutes">
 
+                    <input type="text" id="Seconds" placeholder="Seconds">
+                </div>
 
                 </form>
             </div>

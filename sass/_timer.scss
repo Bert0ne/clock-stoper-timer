@@ -87,7 +87,7 @@
     height: 100vh;
     z-index: 10;
     background-color: #000;
-    opacity: .5;
+    opacity: .8;
     display: block;
 
 }
@@ -100,7 +100,7 @@
     position: fixed;
     z-index: 11;
 
-    background-color: rgba($color: #000000, $alpha: .5);
+    background-color: rgba($color: #000000, $alpha: .6);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -131,6 +131,15 @@
     svg {
         width: 45px;
         height: 45px;
+        transition: .4s;
+        fill: red;
+
+
+        &:hover {
+            cursor: pointer;
+            fill: red;
+
+        }
     }
     
 }
@@ -142,6 +151,7 @@
    align-items: center;
    flex-direction: column;
 
+    
 
    .checkboxs {
        justify-self: flex-start;
@@ -157,7 +167,7 @@
 
    .counting__day__hours {
 
-    display: flex;
+    display: none;
     width: 100%;
     height: 180px; 
     justify-content: center;
@@ -189,7 +199,7 @@
         }
 
         .__hoursInputs {
-            margin-top: 20px;
+            margin-top: 40px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -202,8 +212,53 @@
                 margin: 0 10px;
                 text-align: center;
             }
+            :placeholder {
+                color: white;
+                opacity: 1;
+            }
         }
+       
+   }
 
+   .counting__hours {
+        display: flex;
+        width: 100%;
+        height: 180px; 
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        input {
+            color: #fff;
+            text-align: center;
+        }
+        ::placeholder {
+            color: white;
+            opacity: 1;
+        }
+        
+        .__hoursInputs {
+            margin-top: 40px;
+
+
+
+            input {
+                text-align: center;
+                color: #fff;
+                background-color:transparent;
+                width: 17%;
+                margin: 0 10px;
+            
+                
+                
+            }
+            ::placeholder {
+                color: white;
+                opacity: 1;
+            }
+        }
+        
         
    }
    
@@ -229,7 +284,7 @@
         transition: .3s;
 
         &:hover:first-child {
-            color: blue;
+            color:   #FFEB3B;
 
         }
         &:hover:last-child {
