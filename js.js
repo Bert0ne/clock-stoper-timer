@@ -115,6 +115,8 @@
       stopWatchEl.textContent ="00:00:00"
       n = 0;
       tab.textContent = '';
+      document.title = getTime();
+
     } 
   })
 
@@ -178,37 +180,50 @@ function lapCount(data) {
 
 } else if (document.querySelector('.index__timer')) {
 
-
-
-
+  let hoursInterval ;
+  let isOnlyTime = true;
+  let endTime ;
 //!switch radio inside modal
+
+function checkModal() {
   if (document.querySelector('input[name="radioSel"]')) {
     document.querySelectorAll('input[name="radioSel"]').forEach((elem) => {
       elem.addEventListener("change", function(event) {
         var item = event.target.value;
         if(item == "Hours") {
+          isOnlyTime = true;
+
           displayHours();
+
         } else {
           displayDays();
+          isOnlyTime = false;
+
         }
       });
     });
   }
-
-  function displayHours() {
-    document.querySelector('.counting__day__hours').style.display = "none";
-    document.querySelector('.counting__hours').style.display = "flex";
-  }
+}
+  setInterval(() => {
+    checkModal();
+  }, 10);
 
   function displayDays() {
     document.querySelector('.counting__day__hours').style.display = "flex";
     document.querySelector('.counting__hours').style.display = "none";
   }
 
+  function displayHours() {
+    document.querySelector('.counting__day__hours').style.display = "none";
+    document.querySelector('.counting__hours').style.display = "flex";
+
+  }
 
 
 
 
+
+  //! modal window
 
   document.querySelector('.btn__modal__cancel').addEventListener('click', closeModal);
   //document.querySelector('.modal__background').addEventListener('click', closeModal);
@@ -231,11 +246,15 @@ function lapCount(data) {
       document.querySelector('.timer__display').style.filter = "blur(0)";
     }
   }
-
   document.querySelector('.timer__btn__edit').addEventListener('click', openModal);
+  document.querySelector('.timer__btn__reset').addEventListener('click', resetCounting);
+
 
   function openModal() {
+    document.getElementById("CountingHour").checked = true;
+    displayHours();
     document.querySelector('.modal__background').style.display = "flex";
+    isOnlyTime = true;
 
 
     document.querySelector('.nav').style.filter = "blur(10px)";
@@ -243,39 +262,74 @@ function lapCount(data) {
     document.querySelector('.timer__display').style.filter = "blur(10px)";
 }
 
+  let modalStart = document.querySelector('.btn__modal__start');
+
+  modalStart.addEventListener('click', startCounting);
+
+  document.querySelector('.timer__btn__stop').addEventListener('click', stopCounting)
+
+  document.querySelector('.timer__btn__start').addEventListener('click', unStopCounting)
+
+  function stopCounting() {
+    clearInterval(hoursInterval);
+  }
+  function unStopCounting() {
+    countingInterval() 
+  }
+
+function countingInterval() {
+  hoursInterval = setInterval(() => {
+    countingDate(endTime);
+  }, 400);
 }
 
 
+  function startCounting() {
+
+    if(isOnlyTime == true) {
+      resetCounting();
+      console.log('nope');
+    } else {
+      let modalDate = document.querySelector('input[type="date"]').value;
+      let modalTime = document.querySelector('input[type="time"]').value;
+      let strModalDateTime = modalDate + ' ' + modalTime;
+         endTime = new Date(strModalDateTime).getTime();
 
 
-  /*
-  const endTime = new Date('2019-01-05 18:34:00').getTime();
+      closeModal();
+      countingInterval()
+      
 
-const spanD = document.querySelector('span.d');
-const spanH = document.querySelector('span.h');
-const spanM = document.querySelector('span.m');
-const spanS = document.querySelector('span.s');
+    }
+  }
 
-setInterval(() => {
- const nowTime = new Date().getTime();
- // const time = Math.floor((endTime - nowTime) / 1000);
- const time = endTime - nowTime;
- const days = Math.floor((endTime / (1000 * 60 * 60 * 24)) - (nowTime / (1000 * 60 * 60 * 24)));
- console.log(days);
-
- let hours = Math.floor((endTime / (1000 * 60 * 60) - nowTime / (1000 * 60 * 60)) % 24);
- // Przykład - dodanie 0 przeg godziną 
- hours = hours < 10 ? `0${hours}` : hours;
-
- const minutes = Math.floor((endTime / (1000 * 60) - nowTime / (1000 * 60)) % 60);
-
- const secs = Math.floor((endTime / 1000 - nowTime / 1000) % 60);
-
- spanD.textContent = days;
- spanH.textContent = hours;
- spanM.textContent = minutes;
- spanS.textContent = secs;
-}, 1000)
+  function resetCounting() {
+    clearInterval(hoursInterval);
+    document.querySelector('.timer_display__counting').innerHTML = "00:00:00"
+  }
 
 
-*/
+  function countingDate(timeC) {
+    
+      endTime = timeC;
+      const nowTime = new Date().getTime();
+      // const time = Math.floor((endTime - nowTime) / 1000);
+      const time = endTime - nowTime;
+      const days = Math.floor((endTime / (1000 * 60 * 60 * 24)) - (nowTime / (1000 * 60 * 60 * 24)));
+     
+      let hours = Math.floor((endTime / (1000 * 60 * 60) - nowTime / (1000 * 60 * 60)) % 24);
+      // Przykład - dodanie 0 przeg godziną 
+      hours = hours < 10 ? `0${hours}` : hours;
+     
+      const minutes = Math.floor((endTime / (1000 * 60) - nowTime / (1000 * 60)) % 60);
+     
+      const secs = Math.floor((endTime / 1000 - nowTime / 1000) % 60);
+     
+      document.querySelector('.timer_display__counting').innerHTML = `${days} Days ${hours} Hours ${minutes} Minutes ${secs} Seconds`
+
+
+     
+  } 
+
+}
+
