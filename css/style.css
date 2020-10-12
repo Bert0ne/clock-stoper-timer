@@ -644,6 +644,18 @@ input[type="radio"] {
   margin-top: -1px;
   vertical-align: middle; }
 
+input[type="number"] {
+  font-size: 2rem;
+  padding: 5px;
+  -moz-appearance: textfield;
+  border: none;
+  border-bottom: 1px solid white; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 .checkbox_label {
   font-size: 2rem;
   vertical-align: middle;

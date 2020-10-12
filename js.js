@@ -181,7 +181,7 @@ function lapCount(data) {
 } else if (document.querySelector('.index__timer')) {
 
   let hoursInterval ;
-  let isOnlyTime = true;
+  let isOnlyTime = false;
   let endTime ;
 //!switch radio inside modal
 
@@ -209,13 +209,13 @@ function checkModal() {
   }, 10);
 
   function displayDays() {
-    document.querySelector('.counting__day__hours').style.display = "flex";
-    document.querySelector('.counting__hours').style.display = "none";
+    document.querySelector('.counting__day__hours').style.display = "none";
+    document.querySelector('.counting__hours').style.display = "flex";
   }
 
   function displayHours() {
-    document.querySelector('.counting__day__hours').style.display = "none";
-    document.querySelector('.counting__hours').style.display = "flex";
+    document.querySelector('.counting__day__hours').style.display = "flex";
+    document.querySelector('.counting__hours').style.display = "none";
 
   }
 
@@ -251,7 +251,7 @@ function checkModal() {
 
 
   function openModal() {
-    document.getElementById("CountingHour").checked = true;
+    document.getElementById("countingDay").checked = true;
     displayHours();
     document.querySelector('.modal__background').style.display = "flex";
     isOnlyTime = true;
@@ -286,22 +286,30 @@ function countingInterval() {
 
   function startCounting() {
 
-    if(isOnlyTime == true) {
-      resetCounting();
-      console.log('nope');
+    if(!isOnlyTime == true) {
+      endTime = 0;
+      let hourH = document.querySelector('#HoursH').value;
+      let minutesH = document.querySelector('#MinutesH').value;
+      let secondsH = document.querySelector('#SecondsH').value;
+
+       endTime = (hourH * 60 * 60 * 1000) + (minutesH * 60 * 1000) + (secondsH * 1000);
+
+       closeModal();
+      countingInterval()
+
+
     } else {
       let modalDate = document.querySelector('input[type="date"]').value;
       let modalTime = document.querySelector('input[type="time"]').value;
       let strModalDateTime = modalDate + ' ' + modalTime;
-         endTime = new Date(strModalDateTime).getTime();
-
-
+      endTime = new Date(strModalDateTime).getTime();
       closeModal();
       countingInterval()
-      
-
     }
   }
+
+
+
 
   function resetCounting() {
     clearInterval(hoursInterval);
@@ -310,7 +318,7 @@ function countingInterval() {
 
 
   function countingDate(timeC) {
-    
+      console.log(timeC);
       endTime = timeC;
       const nowTime = new Date().getTime();
       // const time = Math.floor((endTime - nowTime) / 1000);
@@ -325,10 +333,10 @@ function countingInterval() {
      
       const secs = Math.floor((endTime / 1000 - nowTime / 1000) % 60);
      
-      document.querySelector('.timer_display__counting').innerHTML = `${days} Days ${hours} Hours ${minutes} Minutes ${secs} Seconds`
+      document.querySelector('.timer_display__counting').innerHTML = `${days == 1 ? days + ' Day' : days + ' Days'}  ${hours == 1 ? hours + ' Hour' : hours + ' Hours'}  ${minutes == 1 ? minutes + ' Minute' : minutes + ' minutes'}  ${secs == 1 ? secs + ' Second' : secs + ' Seconds'} `;
 
-
-     
+      let testOfTitle = document.querySelector('.inputTitle').value;
+      document.querySelector('.timer_display__title').innerHTML = testOfTitle;
   } 
 
 }
