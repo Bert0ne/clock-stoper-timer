@@ -297,8 +297,7 @@ footer {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 100vh; }
+  flex-direction: column; }
 
 .stoper__time {
   font-size: 15rem;
@@ -315,18 +314,18 @@ footer {
   justify-content: center;
   align-self: center;
   font-family: 'Roboto', sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px; }
 
 .btn {
-  font-size: 3.03rem;
+  font-size: 5rem;
   padding: 1rem 3.4rem;
   border: 1px solid;
   border-radius: 15px;
-  margin: 20px 10px;
+  margin: 10px;
   cursor: pointer;
   background-color: transparent;
-  width: 200px;
-  background-color: rgba(0, 0, 0, 0.5); }
+  width: 200px; }
   .btn__start {
     color: #fff;
     transition: .2s; }
@@ -488,7 +487,7 @@ table tr td {
   backface-visibility: hidden; }
 
 .modal {
-  width: 700px;
+  width: 550px;
   height: 600px;
   border: 1px solid #fff;
   border-radius: 15px;
@@ -533,7 +532,8 @@ table tr td {
   .modal__center .checkboxs {
     justify-self: flex-start;
     width: 100%;
-    padding: 40px 30px; }
+    padding: 40px 30px;
+    opacity: 0; }
     .modal__center .checkboxs form {
       display: inline-block;
       font-size: 1rem; }
@@ -626,6 +626,42 @@ table tr td {
   to {
     margin-top: 0;
     opacity: 1; } }
+
+@media only screen and (max-width: 1400px) {
+  .timer_display__title,
+  .timer_display__counting {
+    font-size: 4rem; } }
+
+@media only screen and (max-width: 800px) {
+  .timer_display__title,
+  .timer_display__counting {
+    font-size: 3rem; }
+  .modal {
+    width: 400px;
+    height: 500px; }
+  .__hoursInputs {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .__hoursInputs input {
+      background-color: transparent;
+      border-radius: 15px;
+      color: #fff;
+      width: 50% !important;
+      margin: 0 10px;
+      text-align: center; }
+    .__hoursInputs :placeholder {
+      color: white;
+      opacity: 1; } }
+
+@media only screen and (max-width: 550px) {
+  .modal {
+    width: 350px;
+    height: 450px; } }
 
 input[type="date"],
 input[type="time"] {

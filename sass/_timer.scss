@@ -95,7 +95,7 @@
     backface-visibility: hidden;
 }
 .modal {
-    width: 700px;
+    width: 550px;
     height: 600px;
     border: 1px solid #fff;
     border-radius: 15px;
@@ -162,6 +162,7 @@
        justify-self: flex-start;
        width: 100%;
        padding: 40px 30px;
+       opacity: 0;
 
 
        form {
@@ -303,4 +304,54 @@
 @keyframes animatetop {
   from {margin-top:-20%; opacity:0}
   to {margin-top:0; opacity:1}
+}
+
+
+
+
+@media only screen and (max-width: 1400px) {
+    .timer_display__title,
+    .timer_display__counting {
+        font-size: 4rem;
+    }
+}
+@media only screen and (max-width: 800px) {
+
+    .timer_display__title,
+    .timer_display__counting {
+        font-size: 3rem;
+    }
+    .modal {
+        width: 400px;
+        height: 500px;
+    }
+    .__hoursInputs {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        input {
+            background-color:transparent;
+            border-radius: 15px;
+            color: #fff;
+            width: 50% !important;
+            margin: 0 10px;
+            text-align: center;
+        }
+        :placeholder {
+            color: white;
+            opacity: 1;
+        }
+    }
+
+}
+@media only screen and (max-width: 550px) {
+    .modal {
+        width: 350px;
+        height: 450px;
+    }
 }
